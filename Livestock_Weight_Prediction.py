@@ -32,4 +32,3 @@ predicted_weight_3 = model.predict(new_animal_3)
 print(f"Predicted weight for the new animal: {predicted_weight_1[0]:.2f} kg")
 print(f"Predicted weight for the new animal: {predicted_weight_2[0]:.2f} kg")
 print(f"Predicted weight for the new animal: {predicted_weight_3[0]:.2f} kg")
-
