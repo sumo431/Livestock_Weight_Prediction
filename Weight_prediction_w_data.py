@@ -24,7 +24,18 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_
 model = LinearRegression()
 model.fit(X_train, Y_train)
 
-predictions = model.predict(X_test)
-print(predictions)
+#Predict only the first 10 items
+X_test_sample = X_test[:10]
+Y_test_sample = Y_test[:10]
+predictions_sample = model.predict(X_test_sample)
 
+results = pd.DataFrame({
+    'Type': df.loc[Y_test_sample.index, 'animal_type'].values,
+    'Sex': df.loc[Y_test_sample.index, 'sex'].values,
+    'Variety': df.loc[Y_test_sample.index, 'variety'].values,
+    'Actual': Y_test_sample.values,
+    'Predicted': predictions_sample.round(2) 
+})
 
+print("\nComparison of Prediction Results")
+print(results)
