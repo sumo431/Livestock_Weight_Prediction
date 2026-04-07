@@ -12,5 +12,5 @@ data = {
 
 df = pd.DataFrame(data)
 df.to_csv('livestock_data.csv', index=False)
-print("Data generated and saved to 'Pig_data.csv.")
+print("Data generated and saved to 'livestock_data.csv.")
 
