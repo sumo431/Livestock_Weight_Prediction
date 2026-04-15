@@ -6,11 +6,11 @@ from sklearn.linear_model import LinearRegression
 
 
 # Load the dataset
-df = pd.read_csv('livestock_data.csv')
+df = pd.read_csv('pig_data.csv')
 
 #devide X and Y as features and target variable
-X = df[['animal_type', 'age', 'sex', 'variety']]
-Y = df['weight']
+X = df[['animal_type', 'age_months', 'sex', 'variety']]
+Y = df['weight_kg']
 
 # Split the dataset into training and testing sets
 ct = ColumnTransformer(transformers=[
