@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 
 # Load the dataset
@@ -39,3 +40,15 @@ results = pd.DataFrame({
 
 print("\nComparison of Prediction Results")
 print(results)
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+import numpy as np
+
+# Full test set prediction (not just 10 samples)
+Y_pred = model.predict(X_test)
+
+mae = mean_absolute_error(Y_test, Y_pred)
+rmse = np.sqrt(mean_squared_error(Y_test, Y_pred))
+
+print(f"MAE: {mae:.2f} kg")
+print(f"RMSE: {rmse:.2f} kg")
